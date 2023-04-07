@@ -1,2 +1,3 @@
-def foo():
-    print ('foo')
+def foo() -> None:
+    print('foo')
+    pass
