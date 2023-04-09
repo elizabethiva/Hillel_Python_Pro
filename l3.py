@@ -1,2 +1,1 @@
-def fooooo():
-    pass
+print(bin(24))
