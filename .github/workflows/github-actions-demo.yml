@@ -17,4 +17,4 @@ jobs:
       - name: Run linter
         run: flake8 ./
       - name: Chek formating
-        run: black --chek ./ && isort --chek ./
+        run: black --check ./ && isort --check ./
