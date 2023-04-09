@@ -1,1 +1,3 @@
-print('Hello, GitHub')
+def foo():
+    print('foo')
+    pass
