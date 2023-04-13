@@ -2,7 +2,7 @@ from pympler import asizeof
 
 
 def find_in_file(file_name="rockyou.txt",
-                pattern=input("Enter the search word: ")):
+                 pattern=input("Enter the search word: ")):
     total_lines = 0
     with open(file_name, "r") as file:
         with open("results.txt", "w") as results:
