@@ -22,8 +22,8 @@ class PostToChannel(ABC):
     @abstractmethod
     def process_schedule(self, timestamp):
         """This function should determine when the post will be published."""
-     
-        
+
+
 class Twitter(PostToChannel):
     def __init__(self, channel, message):
         self.channel = channel
@@ -69,7 +69,7 @@ class Facebook(PostToChannel):
                 break
 
 
-def post_to_channel(channel: str, message: str, timestamp: int) -> None:
+def instantiation(channel: str, message: str, timestamp: int) -> None:
     if channel == "Twitter":
         social_network = Twitter(channel, message)
     if channel == "Youtube":
@@ -83,14 +83,14 @@ def post_to_channel(channel: str, message: str, timestamp: int) -> None:
 def dispatcher(posts: list, channels: list) -> None:
     for post in posts:
         for channel in channels:
-            post_to_channel(channel.type_of_channel, post.message, post.timestamp)
+            instantiation(channel.type_of_channel, post.message, post.timestamp)
 
 
 def main():
     list_of_posts = [
-        Post(message="Hi guys!", timestamp=1683031500.6331794),
-        Post(message="Subscribe!", timestamp=1683031511.8375683),
-        Post(message="Bye!", timestamp=1683031524.2123072),
+        Post(message="Hi guys!", timestamp=1683034464.4374373),
+        Post(message="Subscribe!", timestamp=1683034465.457672),
+        Post(message="Bye!", timestamp=1683034469.457672),
     ]
     list_of_social_channels = [
         SocialChannel(type_of_channel="Twitter", number_of_followers=1000),
