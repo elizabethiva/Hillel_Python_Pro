@@ -93,7 +93,7 @@ def main():
         Post(message="Bye!", timestamp=1683031524.2123072),
     ]
     list_of_social_channels = [
-        SocialChannel(type_of_channel="Twitter", number_of_followers=1),
+        SocialChannel(type_of_channel="Twitter", number_of_followers=1000),
         SocialChannel(type_of_channel="Youtube", number_of_followers=100),
         SocialChannel(type_of_channel="Facebook", number_of_followers=10),
     ]
