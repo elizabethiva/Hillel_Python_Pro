@@ -10,7 +10,7 @@ class SocialChannel:
 
 class PostToChannel(ABC):
     @abstractmethod
-    def post_to_channel(self):
+    def post_a_message(self):
         """Post to the channel"""
 
     @abstractmethod
@@ -29,13 +29,13 @@ class Twitter(PostToChannel):
         self.channel = channel
         self.message = message
 
-    def post_to_channel(self):
+    def post_a_message(self):
         print(f"The post was published on {self.channel}: '{self.message}'")
 
     def process_schedule(self, timestamp):
         while True:
             if timestamp <= time.time():
-                self.post_to_channel()
+                self.post_a_message()
                 break
 
 
@@ -44,13 +44,13 @@ class Youtube(PostToChannel):
         self.channel = channel
         self.message = message
 
-    def post_to_channel(self):
+    def post_a_message(self):
         print(f"The post was published on {self.channel}: '{self.message}'")
 
     def process_schedule(self, timestamp):
         while True:
             if timestamp <= time.time():
-                self.post_to_channel()
+                self.post_a_message()
                 break
 
 
@@ -59,17 +59,17 @@ class Facebook(PostToChannel):
         self.channel = channel
         self.message = message
 
-    def post_to_channel(self):
+    def post_a_message(self):
         print(f"The post was published on {self.channel}: '{self.message}'")
 
     def process_schedule(self, timestamp):
         while True:
             if timestamp <= time.time():
-                self.post_to_channel()
+                self.post_a_message()
                 break
 
 
-def post_a_message(channel: str, message: str, timestamp: int) -> None:
+def post_to_channel(channel: str, message: str, timestamp: int) -> None:
     if channel == "Twitter":
         social_network = Twitter(channel, message)
     if channel == "Youtube":
@@ -80,10 +80,10 @@ def post_a_message(channel: str, message: str, timestamp: int) -> None:
     social_network.process_schedule(timestamp)
 
 
-def dispatcher(posts: list, channels: list):
+def dispatcher(posts: list, channels: list) -> None:
     for post in posts:
         for channel in channels:
-            post_a_message(channel.type_of_channel, post.message, post.timestamp)
+            post_to_channel(channel.type_of_channel, post.message, post.timestamp)
 
 
 def main():
