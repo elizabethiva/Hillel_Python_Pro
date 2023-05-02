@@ -8,6 +8,12 @@ class SocialChannel:
         self.number_of_followers = number_of_followers
 
 
+class Post:
+    def __init__(self, message: str, timestamp: float):
+        self.message = message
+        self.timestamp = timestamp
+
+
 class PostToChannel(ABC):
     @abstractmethod
     def post_a_message(self):
@@ -16,14 +22,8 @@ class PostToChannel(ABC):
     @abstractmethod
     def process_schedule(self, timestamp):
         """This function should determine when the post will be published."""
-
-
-class Post:
-    def __init__(self, message: str, timestamp: float):
-        self.message = message
-        self.timestamp = timestamp
-
-
+     
+        
 class Twitter(PostToChannel):
     def __init__(self, channel, message):
         self.channel = channel
