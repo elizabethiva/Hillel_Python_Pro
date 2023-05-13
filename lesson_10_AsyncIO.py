@@ -33,7 +33,7 @@ urls = [
     "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=UAH&apikey=EFO5Z08U1IXU5EXO",
     "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=EUR&apikey=EFO5Z08U1IXU5EXO",
     "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=UAH&to_currency=USD&apikey=EFO5Z08U1IXU5EXO",
-    "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=GBP&apikey=EFO5Z08U1IXU5EXO",
+    "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=UAH&to_currency=GBP&apikey=EFO5Z08U1IXU5EXO",
 ]
 
 er = ExchangeRates(urls)
