@@ -36,5 +36,3 @@ urls = [
     "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=UAH&to_currency=GBP&apikey=EFO5Z08U1IXU5EXO",
 ]
 
-er = ExchangeRates(urls)
-print(er.data)
