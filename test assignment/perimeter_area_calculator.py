@@ -12,6 +12,9 @@ class Square:
     def calculate_area(self):
         self.area = self.side**2
         return self.area
+    
+    def format_result(self):
+        return f"{self.__class__.__name__} Perimeter {round(self.calculate_perimeter(), 2)} Area {round(self.calculate_area(), 2)}"
 
 
 class Rectangle:

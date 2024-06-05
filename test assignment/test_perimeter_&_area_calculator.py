@@ -17,8 +17,7 @@ class TestSquare(unittest.TestCase):
         print("Square area test passed")
 
     def test_format_result(self):
-        result = ShapeResult('Square', round(self.square.calculate_perimeter(), 2), round(self.square.calculate_area(), 2))
-        assert result.format_result() == "Square Perimeter 8 Area 4"
+        assert self.square.format_result() == "Square Perimeter 8 Area 4"
         print("test_format_result test passed")
 
 
