@@ -1,9 +1,10 @@
 from perimeter_area_calculator import Circle, Rectangle, Square
+import unittest
 
 
-class TestSquare:
-    def __init__(self, side):
-        self.square = Square(side)
+class TestSquare(unittest.TestCase):
+    def setUp(self):
+        self.square = Square(2)
 
     def test_perimeter(self):
         perimeter = self.square.calculate_perimeter()
@@ -16,11 +17,9 @@ class TestSquare:
         print("Square area test passed")
 
 
-class TestRectangle:
-    def __init__(self, top_right_x, top_right_y, bottom_left_x, bottom_left_y):
-        self.rectangle = Rectangle(
-            top_right_x, top_right_y, bottom_left_x, bottom_left_y
-        )
+class TestRectangle(unittest.TestCase):
+    def setUp(self):
+        self.rectangle = Rectangle(2, 2, 1, 1)
 
     def test_perimeter(self):
         perimeter = self.rectangle.calculate_perimeter()
@@ -33,9 +32,9 @@ class TestRectangle:
         print("Rectangle area test passed")
 
 
-class TestCircle:
-    def __init__(self, radius):
-        self.circle = Circle(radius)
+class TestCircle(unittest.TestCase):
+    def setUp(self):
+        self.circle = Circle(2)
 
     def test_perimeter(self):
         perimeter = self.circle.calculate_perimeter()
@@ -49,15 +48,15 @@ class TestCircle:
 
 
 def main():
-    square_tester = TestSquare(2)
+    square_tester = TestSquare()
     square_tester.test_perimeter()
     square_tester.test_area()
 
-    rectangle_tester = TestRectangle(2, 2, 1, 1)
+    rectangle_tester = TestRectangle()
     rectangle_tester.test_perimeter()
     rectangle_tester.test_area()
 
-    circle_tester = TestCircle(2)
+    circle_tester = TestCircle()
     circle_tester.test_perimeter()
     circle_tester.test_area()
 
