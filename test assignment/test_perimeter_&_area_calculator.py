@@ -1,4 +1,4 @@
-from perimeter_area_calculator import Circle, Rectangle, Square
+from perimeter_area_calculator import Circle, Rectangle, Square, ShapeResult
 import unittest
 
 
@@ -15,6 +15,12 @@ class TestSquare(unittest.TestCase):
         area = self.square.calculate_area()
         assert area == 4.0
         print("Square area test passed")
+
+    def test_format_result(self):
+        result = ShapeResult('Square', round(self.square.calculate_perimeter(), 2), round(self.square.calculate_area(), 2))
+        assert result.format_result() == "Square Perimeter 8 Area 4"
+        print("test_format_result test passed")
+
 
 
 class TestRectangle(unittest.TestCase):
@@ -62,4 +68,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    unittest.main()
